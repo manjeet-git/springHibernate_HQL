@@ -1,5 +1,6 @@
 package com.hrm.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,28 @@ public class EmployeeServiceImpl {
 	
 	public Employee showtEmployeeById(int id) {
 		return repository.getEmployeeById(id);
+		
 	}
+	
+	
 	
 	public List<Employee> showEmployees(){
 		List<Employee> employees=repository.getEmployees();
 		return employees;
+	}
+	
+	
+	public int removeEmployeeById(int id) {
+		return repository.deleteEmployee(id);
+	}
+	
+
+	public int updateEmployeeById(Employee emp) {
+		return repository.updateEmployee(emp);
+	}
+	
+	public boolean IsExistEmp(int id) {
+		return repository.isEmployeeExistHaingId(id);
 	}
 	
 }
